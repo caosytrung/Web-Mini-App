@@ -17,7 +17,6 @@ const AppLayout: React.FC = () => {
       result.push(`${ key }: ${ value }`);
     });
 
-
     return result.map(person => <p>{person}</p>);
   }
 
