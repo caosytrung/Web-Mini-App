@@ -1,12 +1,13 @@
 import { Button, Layout } from "antd";
 import './AppContent.scss'
 import React from "react";
+import { SuperAppConstant } from "../../constant/constant";
 
 
 const AppLayout: React.FC = () => {
 
   const onPay = () => {
-    getSupperAppModule(window)?.invoke("finishMiniApp", "", "");
+    getSupperAppModule(window)?.invoke(SuperAppConstant.SuperAppFinisAppCommand, "", "");
   }
 
   return (
@@ -18,7 +19,7 @@ const AppLayout: React.FC = () => {
 };
 
 function getSupperAppModule(global: any): any | null {
-  return global['MINI_APP_JS_INTERFACE'];
+  return global[SuperAppConstant.SuperAppJsInterface];
 }
 
 export default AppLayout;
